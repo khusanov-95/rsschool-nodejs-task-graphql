@@ -1,3 +1,3 @@
-import { member } from './member.js';
+import { memberType, memberTypeId } from './member.js';
 
-export { member };
+export { memberType, memberTypeId };

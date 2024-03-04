@@ -11,7 +11,7 @@ enum MemberTypeId {
   BUSINESS = 'business',
 }
 
-const MemberTypeIdType = new GraphQLScalarType({
+export const memberTypeId = new GraphQLScalarType({
   name: 'MemberTypeId',
   serialize(value) {
     if (!isMemberTypeId(value)) {
@@ -36,10 +36,10 @@ function isMemberTypeId(value: unknown): value is MemberTypeId {
   return value === MemberTypeId.BASIC || value === MemberTypeId.BUSINESS;
 }
 
-export const member = new GraphQLObjectType({
+export const memberType = new GraphQLObjectType({
   name: 'MemberType',
   fields: () => ({
-    id: { type: MemberTypeIdType },
+    id: { type: memberTypeId },
     discount: { type: GraphQLFloat },
     postsLimitPerMonth: { type: GraphQLInt },
   }),

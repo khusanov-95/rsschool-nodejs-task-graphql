@@ -1,10 +1,11 @@
 import { GraphQLObjectType } from 'graphql';
 
-import { member } from '../types/index.js';
+import { member, members } from './member.js';
 
 export const QueryType = new GraphQLObjectType({
   name: 'Query',
   fields: () => ({
     member,
+    members,
   }),
 });
