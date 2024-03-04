@@ -6,12 +6,12 @@ import {
   GraphQLScalarType,
 } from 'graphql';
 
-enum MemberTypeId {
+enum memberTypeId {
   BASIC = 'basic',
   BUSINESS = 'business',
 }
 
-export const memberTypeId = new GraphQLScalarType({
+export const MemberTypeId = new GraphQLScalarType({
   name: 'MemberTypeId',
   serialize(value) {
     if (!isMemberTypeId(value)) {
@@ -32,14 +32,14 @@ export const memberTypeId = new GraphQLScalarType({
   },
 });
 
-function isMemberTypeId(value: unknown): value is MemberTypeId {
-  return value === MemberTypeId.BASIC || value === MemberTypeId.BUSINESS;
+function isMemberTypeId(value: unknown): value is memberTypeId {
+  return value === memberTypeId.BASIC || value === memberTypeId.BUSINESS;
 }
 
-export const memberType = new GraphQLObjectType({
+export const MemberType = new GraphQLObjectType({
   name: 'MemberType',
   fields: () => ({
-    id: { type: memberTypeId },
+    id: { type: MemberTypeId },
     discount: { type: GraphQLFloat },
     postsLimitPerMonth: { type: GraphQLInt },
   }),
