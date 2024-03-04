@@ -5,7 +5,7 @@ import { post, posts } from './post.js';
 import { profile, profiles } from './profile.js';
 import { user, users } from './user.js';
 
-export const QueryType = new GraphQLObjectType({
+export const query = new GraphQLObjectType({
   name: 'Query',
   fields: () => ({
     member,

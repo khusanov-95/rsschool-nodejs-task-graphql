@@ -4,8 +4,6 @@ import { graphql, parse, validate } from 'graphql';
 import depthLimit from 'graphql-depth-limit';
 import { gqlContext } from './gqlContext.js';
 
-console.log(123123);
-
 const plugin: FastifyPluginAsyncTypebox = async (fastify) => {
   fastify.route({
     url: '/',
