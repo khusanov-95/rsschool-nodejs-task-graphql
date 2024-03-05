@@ -1,20 +1,6 @@
-import { GraphQLObjectType } from 'graphql';
+import { member as memberType, members as memberTypes } from '../queries/member.js';
+import { post, posts } from '../queries/post.js';
+import { user, users } from '../queries/user.js';
+import { profile, profiles } from '../queries/profile.js';
 
-import { member, members } from './member.js';
-import { post, posts } from './post.js';
-import { profile, profiles } from './profile.js';
-import { user, users } from './user.js';
-
-export const query = new GraphQLObjectType({
-  name: 'Query',
-  fields: () => ({
-    member,
-    members,
-    post,
-    posts,
-    profile,
-    profiles,
-    user,
-    users,
-  }),
-});
+export { memberType, memberTypes, post, posts, user, users, profile, profiles };
